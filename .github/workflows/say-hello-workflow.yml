@@ -10,6 +10,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Say hello
       run: |
-        echo Wowwww this one is triggered from GitHub! |
+        echo Wowwww this one is triggered from GitHub!! |
         echo top |
         env
