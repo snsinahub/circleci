@@ -1,0 +1,18 @@
+name: snsinahub-valet/Cirecle-migration/start-step-1
+on:
+  push:
+    branches:
+    - main
+jobs:
+  step-1:
+    runs-on: ubuntu-latest
+    container:
+      image: docker:17.05.0-ce-git
+    steps:
+    - uses: actions/checkout@v2
+#     # 'setup_remote_docker' was not transformed because there is no suitable equivalent in GitHub Actions
+    - name: install dependencies
+      run: "apk add --no-cache \\\n  py-pip=9.0.0-r1\npip install --upgrade pip \\\npip install \\\n  docker-compose==1.12.0 \\\n  awscli==1.11.76 \n"
+    - name: build docker image
+      run: 'docker build -t snsinahub/circleci-migration:1.0.0 .
+        '
