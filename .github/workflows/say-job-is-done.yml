@@ -1,0 +1,15 @@
+name: snsinahub-valet/circleci/say-job-is-done
+on:
+  push:
+    branches:
+    - main
+jobs:
+  job-done:
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu
+    steps:
+    - uses: actions/checkout@v2
+#     # There was an internal error transforming this item
+#     # Message: undefined method `[]' for nil:NilClass
+#     - run:
