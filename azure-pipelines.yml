@@ -20,7 +20,12 @@ stages:
   - job: Build
     displayName: Build
     pool: Default
-    
+    environment: 'sandbox'
+    strategy:
+        runOnce:
+          deploy:
+            steps:
+            - script: echo Hello world
 
     steps:
     - task: Docker@2
