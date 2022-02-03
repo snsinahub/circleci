@@ -14,12 +14,13 @@ variables:
 stages:
 - stage: Build
   displayName: Build image
+  
    
   jobs:
   - job: Build
     displayName: Build
     pool: Default
-    environment: 'sandbox'
+    
 
     steps:
     - task: Docker@2
