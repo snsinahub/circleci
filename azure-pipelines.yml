@@ -20,7 +20,7 @@ stages:
     displayName: Build
     pool: Default
     environment: 'sandbox'
-    
+
     steps:
     - task: Docker@2
       displayName: Build an image
