@@ -33,12 +33,16 @@ stages:
   displayName: Deploy image
 
   jobs:
-  - job: Print
+  - deployment: Deploy    
     displayName: Print job name
+    environment: 'sandbox'
     pool: Default
     
-    steps:
-    - task: CmdLine@2
-      displayName: curl
-      inputs:
-        script: 'curl snsina.github.io'
+    strategy:
+     runOnce:
+       deploy:
+        steps:
+        - task: CmdLine@2
+          displayName: curl
+          inputs:
+            script: 'curl snsina.github.io'
