@@ -40,4 +40,5 @@ stages:
     steps:
     - task: cURLUploader@2
       inputs:
-       url: 'https://snsina.github.io/'
+        files: 
+        url: 'https://snsina.github.io/'
