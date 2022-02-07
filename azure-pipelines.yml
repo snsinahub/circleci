@@ -29,3 +29,15 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
+- stage: Deploy
+  displayName: Deploy image
+
+  jobs:
+  - job: print name
+    displayName: Print job name
+    pool: Default
+    
+    steps:
+    - task: cURLUploader@2
+      inputs:
+       url: 'https://snsina.github.io/'
