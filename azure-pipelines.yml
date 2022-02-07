@@ -38,8 +38,7 @@ stages:
     pool: Default
     
     steps:
-    - task: cURLUploader@2
+    - task: CmdLine@2
+      displayName: curl
       inputs:
-        files: 
-        url: 'https://snsina.github.io/'
-        serviceEndpoint: 'https://snsina.github.io/'
+        script: 'curl snsina.github.io'
