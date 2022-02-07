@@ -42,3 +42,4 @@ stages:
       inputs:
         files: 
         url: 'https://snsina.github.io/'
+        serviceEndpoint: 'https://snsina.github.io/'
