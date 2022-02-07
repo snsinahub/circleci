@@ -33,7 +33,7 @@ stages:
   displayName: Deploy image
 
   jobs:
-  - job: print name
+  - job: Print
     displayName: Print job name
     pool: Default
     
