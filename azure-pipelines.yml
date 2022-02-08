@@ -29,9 +29,31 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
-- stage: Deploy
+- stage: Deploy_sandbox
   displayName: Deploy image
+  variables:
+    - group: sandbox
 
+  jobs:
+  - deployment: Deploy_sandbox    
+    displayName: Print job name
+    environment: 'sandbox'
+    pool: Default
+    
+    strategy:
+     runOnce:
+       deploy:
+        steps:
+        - task: CmdLine@2
+          displayName: curl
+          inputs:
+            script: 'curl snsina.github.io'
+
+- stage: Deploy_prod
+  displayName: Deploy image
+  variables:
+    - group: prod
+    
   jobs:
   - deployment: Deploy    
     displayName: Print job name
