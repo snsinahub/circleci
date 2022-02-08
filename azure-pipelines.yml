@@ -29,7 +29,7 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
-  - job: 'print-default-work-directory'
+  - job: 'print_default_working_directory'
     displayName: print_dir_path
     pool: Default
 
