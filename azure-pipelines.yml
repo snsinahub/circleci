@@ -53,11 +53,11 @@ stages:
   displayName: Deploy image
   variables:
     - group: prod
-    
+
   jobs:
   - deployment: Deploy    
     displayName: Print job name
-    environment: 'sandbox'
+    environment: 'prod'
     pool: Default
     
     strategy:
